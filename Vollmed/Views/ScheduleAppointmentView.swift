@@ -7,9 +7,29 @@
 
 import SwiftUI
 
+let patientID = "46b84859-8d2c-4dda-bde7-a2018c5f55d7"
+
 struct ScheduleAppointmentView: View {
     
     @State private var selectedDate = Date()
+    let specialistID: String
+    private let service = WebService()
+    
+    private func scheduleAppointment() async {
+        
+        do {
+            let request = ScheduleAppointmentRequest(specialist: specialistID,
+                                                     patient: patientID,
+                                                     date: selectedDate.convertToString())
+            
+            if let response = try await service.sheduleAppointment(appointmentResquest: request) {
+                print("Consulta agendada com sucesso!")
+                print(response)
+            }
+        } catch {
+            print("Ocorreu um erro ao realizar agendamento: \(error)")
+        }
+    }
     
     var body: some View {
         VStack {
@@ -24,7 +44,9 @@ struct ScheduleAppointmentView: View {
                 .datePickerStyle(.graphical)
             
             Button {
-                print(self.selectedDate.convertToString().convertDateStringToReadableDate())
+                Task {
+                    await scheduleAppointment()
+                }
             } label: {
                 ButtonView(text: "Agendar consulta")
             }
@@ -39,5 +61,5 @@ struct ScheduleAppointmentView: View {
 }
 
 #Preview {
-    ScheduleAppointmentView()
+    ScheduleAppointmentView(specialistID: .init())
 }
