@@ -19,7 +19,7 @@ struct ScheduleAppointmentView: View {
                 .foregroundStyle(.accent)
                 .multilineTextAlignment(.center)
                 .padding(.top)
-            
+            //Date.now...Date(timeInterval: 12 * 60, since: .now)
             DatePicker("Escolha a data da consulta", selection: $selectedDate, in: Date()...)
                 .datePickerStyle(.graphical)
             
@@ -32,6 +32,9 @@ struct ScheduleAppointmentView: View {
         .padding()
         .navigationTitle("Agendar consulta")
         .navigationBarTitleDisplayMode(.large)
+        .onAppear {
+            UIDatePicker.appearance().minuteInterval = 15
+        }
     }
 }
 
