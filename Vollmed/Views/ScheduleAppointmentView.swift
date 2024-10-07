@@ -11,6 +11,7 @@ let patientID = "46b84859-8d2c-4dda-bde7-a2018c5f55d7"
 
 struct ScheduleAppointmentView: View {
     
+    @Environment(\.presentationMode) var presentationMode
     @State private var selectedDate = Date()
     @State private var isAppointmentScheduled = false
     @State private var showAlert = false
@@ -65,8 +66,12 @@ struct ScheduleAppointmentView: View {
         .onAppear {
             UIDatePicker.appearance().minuteInterval = 15
         }
-        .alert( isAppointmentScheduled ? "Sucesso!" : "Ops, algo deu errado!", isPresented: $showAlert, presenting: isAppointmentScheduled) { _ in
-            Button(action: {}, label: {
+        .alert( isAppointmentScheduled ? "Sucesso!" : "Ops, algo deu errado!", isPresented: $showAlert, presenting: isAppointmentScheduled) { isScheduled in
+            Button(action: {
+                if isScheduled {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            }, label: {
                 Text("Ok")
             })
         } message: { isScheduled in
