@@ -24,7 +24,7 @@ struct ScheduleAppointmentView: View {
                 .datePickerStyle(.graphical)
             
             Button {
-                print(self.selectedDate.convertToString())
+                print(self.selectedDate.convertToString().convertDateStringToReadableDate())
             } label: {
                 ButtonView(text: "Agendar consulta")
             }
