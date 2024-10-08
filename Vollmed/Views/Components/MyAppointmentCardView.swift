@@ -43,8 +43,8 @@ struct MyAppointmentCardView: View {
                     ButtonView(text: "Remarcar")
                 }
                 
-                Button {
-                    
+                NavigationLink {
+                    CancelAppointmentView()
                 } label: {
                     ButtonView(text: "Cancelar", buttonType: .cancel)
                 }
