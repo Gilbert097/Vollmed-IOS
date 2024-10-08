@@ -29,7 +29,20 @@ struct ScheduleAppointmentView: View {
     }
     
     private func rescheduleAppointment() async {
-        print("Consulta reagendada com sucesso!")
+        do {
+            guard let appointmentID else { return }
+            
+            if let _ = try await service.resheduleAppointment(appointmentID: appointmentID, date: selectedDate.convertToString()) {
+                print("Consulta reagendada com sucesso!")
+                isAppointmentScheduled = true
+            } else {
+                isAppointmentScheduled = false
+            }
+        } catch {
+            isAppointmentScheduled = false
+            print("Ocorreu um erro ao realizar reagendamento: \(error)")
+        }
+        showAlert = true
     }
     
     private func scheduleAppointment() async {
@@ -41,7 +54,6 @@ struct ScheduleAppointmentView: View {
             
             if let response = try await service.sheduleAppointment(appointmentResquest: request) {
                 print("Consulta agendada com sucesso!")
-                print(response)
                 isAppointmentScheduled = true
             } else {
                 isAppointmentScheduled = false
