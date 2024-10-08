@@ -13,12 +13,22 @@ struct MyAppointmentsView: View {
     private let service = WebService()
     
     var body: some View {
-        ScrollView{
-            ForEach(appointments) { appointment in
-                MyAppointmentCardView(appointment: appointment)
+        VStack {
+            if appointments.isEmpty {
+                Text("Não há nenhuma consulta agendada no momento!")
+                    .font(.title2)
+                    .multilineTextAlignment(.center)
+                    .bold()
+                    .foregroundStyle(.cancel)
+            } else {
+                ScrollView {
+                    ForEach(appointments) { appointment in
+                        MyAppointmentCardView(appointment: appointment)
+                    }
+                }
+                .scrollIndicators(.never)
             }
         }
-        .scrollIndicators(.never)
         .navigationTitle("Minhas consultas")
         .navigationBarTitleDisplayMode(.large)
         .padding()

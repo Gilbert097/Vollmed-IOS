@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-let patientID = "46b84859-8d2c-4dda-bde7-a2018c5f55d7"
-
 struct ScheduleAppointmentView: View {
     
     @Environment(\.presentationMode) var presentationMode

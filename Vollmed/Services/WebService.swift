@@ -7,6 +7,8 @@
 
 import UIKit
 
+let patientID = "afd46218-5c1d-4e06-8f1d-8e881621983b"
+
 struct WebService {
     
     private let baseURL = "http://localhost:3000"
