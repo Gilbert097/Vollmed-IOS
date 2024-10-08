@@ -10,6 +10,19 @@ import SwiftUI
 struct CancelAppointmentView: View {
     
     @State private var reasonToCancel: String = ""
+    let appointmentID: String
+    private let service = WebService()
+    
+    private func cancelAppointment() async {
+        
+        do {
+            if try await service.cancelAppointment(appointmentID: appointmentID, reasonToCancel: reasonToCancel) {
+                print("Consulta cancelada com sucesso!")
+            }
+        } catch {
+            print("Ocorreu um erro ao efetuar o cancelamento da consulta: \(error)")
+        }
+    }
     
     var body: some View {
         VStack(spacing: 16) {
@@ -29,7 +42,9 @@ struct CancelAppointmentView: View {
                 .frame(height: 300)
             
             Button {
-                print("Consulta cancelada com sucesso!")
+                Task{
+                    await cancelAppointment()
+                }
             } label: {
                 ButtonView(text: "Cancelar consulta", buttonType: .cancel)
             }
@@ -41,5 +56,5 @@ struct CancelAppointmentView: View {
 }
 
 #Preview {
-    CancelAppointmentView()
+    CancelAppointmentView(appointmentID: .init())
 }
