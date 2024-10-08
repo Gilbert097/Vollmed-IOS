@@ -52,7 +52,7 @@ struct ScheduleAppointmentView: View {
                                                      patient: patientID,
                                                      date: selectedDate.convertToString())
             
-            if let response = try await service.sheduleAppointment(appointmentResquest: request) {
+            if let _ = try await service.sheduleAppointment(appointmentResquest: request) {
                 print("Consulta agendada com sucesso!")
                 isAppointmentScheduled = true
             } else {
