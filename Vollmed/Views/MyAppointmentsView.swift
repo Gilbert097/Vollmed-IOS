@@ -15,7 +15,7 @@ struct MyAppointmentsView: View {
     var body: some View {
         ScrollView{
             ForEach(appointments) { appointment in
-                SpecialistCardView(specialist: appointment.specialist)
+                MyAppointmentCardView(appointment: appointment)
             }
         }
         .scrollIndicators(.never)
