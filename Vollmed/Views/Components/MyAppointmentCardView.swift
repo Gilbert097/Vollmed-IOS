@@ -35,8 +35,10 @@ struct MyAppointmentCardView: View {
             }
             
             HStack {
-                Button {
-                    
+                NavigationLink {
+                    ScheduleAppointmentView(specialistID: appointment.specialist.id, 
+                                            isRescheduleView: true,
+                                            appointmentID: appointment.id)
                 } label: {
                     ButtonView(text: "Remarcar")
                 }
