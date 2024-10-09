@@ -25,6 +25,7 @@
 		D495F9702CB5AFB30034B229 /* MyAppointmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F96F2CB5AFB30034B229 /* MyAppointmentCardView.swift */; };
 		D495F9722CB5C1BD0034B229 /* CancelAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9712CB5C1BD0034B229 /* CancelAppointmentView.swift */; };
 		D495F9742CB6E7220034B229 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9732CB6E7220034B229 /* SignInView.swift */; };
+		D495F9762CB6EBAA0034B229 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9752CB6EBAA0034B229 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		D495F96F2CB5AFB30034B229 /* MyAppointmentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentCardView.swift; sourceTree = "<group>"; };
 		D495F9712CB5C1BD0034B229 /* CancelAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAppointmentView.swift; sourceTree = "<group>"; };
 		D495F9732CB6E7220034B229 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		D495F9752CB6EBAA0034B229 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				D495F96B2CB56DF20034B229 /* MyAppointmentsView.swift */,
 				D495F9712CB5C1BD0034B229 /* CancelAppointmentView.swift */,
 				D495F9732CB6E7220034B229 /* SignInView.swift */,
+				D495F9752CB6EBAA0034B229 /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				484BEF032AB0F7080033C07A /* SpecialistCardView.swift in Sources */,
 				484BEEFF2AB0F59D0033C07A /* WebService.swift in Sources */,
 				48539DED2AB0F47C005BD7C9 /* VollmedApp.swift in Sources */,
+				D495F9762CB6EBAA0034B229 /* SignUpView.swift in Sources */,
 				D495F96C2CB56DF20034B229 /* MyAppointmentsView.swift in Sources */,
 				D495F9702CB5AFB30034B229 /* MyAppointmentCardView.swift in Sources */,
 				D495F9632CB46A960034B229 /* ScheduleAppointmentView.swift in Sources */,

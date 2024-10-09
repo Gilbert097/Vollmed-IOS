@@ -52,7 +52,24 @@ struct SignInView: View {
                 .padding(14)
                 .background(.gray.opacity(0.25))
                 .clipShape(RoundedRectangle(cornerRadius: 14))
+            
+            Button {
+                
+            } label: {
+                ButtonView(text: "Entrar")
+            }
+            
+            NavigationLink {
+                SignUpView()
+            } label: {
+                Text("Ainda não possui uma conta? Cadastre-se")
+                    .bold()
+                    .frame(maxWidth: .infinity, alignment: .center)
+            }
+            .foregroundStyle(.accent)
+
         }
+        .padding()
     }
 }
 
