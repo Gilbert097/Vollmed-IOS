@@ -9,7 +9,30 @@ import SwiftUI
 
 struct SignUpView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                Image(.logo)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity, maxHeight: 36, alignment: .center)
+                    .padding(.vertical)
+                
+                Text("Olá")
+                    .font(.title2)
+                    .bold()
+                    .foregroundStyle(.accent)
+                
+                Text("Insira seus dados para cirar uma conta.")
+                    .font(.title3)
+                    .bold()
+                    .foregroundStyle(.gray)
+                    .padding(.bottom)
+                    
+            }
+        }
+        .scrollIndicators(.never)
+        .navigationBarBackButtonHidden()
+        .padding()
     }
 }
 
