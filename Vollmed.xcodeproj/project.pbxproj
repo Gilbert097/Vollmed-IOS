@@ -24,6 +24,7 @@
 		D495F96E2CB5AC010034B229 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F96D2CB5AC010034B229 /* Appointment.swift */; };
 		D495F9702CB5AFB30034B229 /* MyAppointmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F96F2CB5AFB30034B229 /* MyAppointmentCardView.swift */; };
 		D495F9722CB5C1BD0034B229 /* CancelAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9712CB5C1BD0034B229 /* CancelAppointmentView.swift */; };
+		D495F9742CB6E7220034B229 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9732CB6E7220034B229 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		D495F96D2CB5AC010034B229 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		D495F96F2CB5AFB30034B229 /* MyAppointmentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentCardView.swift; sourceTree = "<group>"; };
 		D495F9712CB5C1BD0034B229 /* CancelAppointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAppointmentView.swift; sourceTree = "<group>"; };
+		D495F9732CB6E7220034B229 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				D495F9622CB46A960034B229 /* ScheduleAppointmentView.swift */,
 				D495F96B2CB56DF20034B229 /* MyAppointmentsView.swift */,
 				D495F9712CB5C1BD0034B229 /* CancelAppointmentView.swift */,
+				D495F9732CB6E7220034B229 /* SignInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				D495F96C2CB56DF20034B229 /* MyAppointmentsView.swift in Sources */,
 				D495F9702CB5AFB30034B229 /* MyAppointmentCardView.swift in Sources */,
 				D495F9632CB46A960034B229 /* ScheduleAppointmentView.swift in Sources */,
+				D495F9742CB6E7220034B229 /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
