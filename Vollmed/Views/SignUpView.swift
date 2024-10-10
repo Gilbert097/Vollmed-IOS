@@ -15,6 +15,16 @@ struct SignUpView: View {
     @State private var cpf: String = .init()
     @State private var telephone: String = .init()
     @State private var password: String = .init()
+    @State private var healthPlanSelected: String
+    
+    private let healthPlansMock = [
+        "Amil", "Unimed", "Bradesco Saúde", "SulAmérica", "Hapvida", "Notredame Intermédica", "São Francisco Saúde", "Golden Cross",
+        "Medial Saúde", "América Saúde", "Outro"
+    ]
+    
+    public init() {
+        self.healthPlanSelected = healthPlansMock.first!
+    }
     
     var body: some View {
         ScrollView {
@@ -90,6 +100,17 @@ struct SignUpView: View {
                     .padding(14)
                     .background(.gray.opacity(0.25))
                     .clipShape(RoundedRectangle(cornerRadius: 14))
+                
+                Text("Selecione o seu plano de saúde")
+                    .font(.title3)
+                    .bold()
+                    .foregroundStyle(.accent)
+                
+                Picker("Plano de súde", selection: $healthPlanSelected) {
+                    ForEach(healthPlansMock, id: \.self) { helthPlan in
+                        Text(helthPlan)
+                    }
+                }
                 
                 Button {
                     
