@@ -16,6 +16,8 @@ struct SignUpView: View {
     @State private var telephone: String = .init()
     @State private var password: String = .init()
     @State private var healthPlanSelected: String
+    @State private var showAlert = false
+    @State private var isPatientRegistred = false
     
     private let service = WebService()
     
@@ -106,6 +108,22 @@ struct SignUpView: View {
         .scrollIndicators(.never)
         .navigationBarBackButtonHidden()
         .padding()
+        .alert(isPatientRegistred ? "Sucesso!" : "Ops, algo deu errado!",
+               isPresented: $showAlert,
+               presenting: isPatientRegistred) { _ in
+            
+            Button(action: {
+               print("Botão OK precionado!")
+            }, label: {
+                Text("Ok")
+            })
+        } message: { isRegistred in
+            if isRegistred {
+                Text("Cadastrado com sucesso!")
+            } else {
+                Text("Houve um erro ao registrar paciente. Por favor tente novamente ou entre em contato por telefone.")
+            }
+        }
     }
     
     private func registerPatient() async {
@@ -113,14 +131,18 @@ struct SignUpView: View {
             let patient = createPatient()
             let patientRegistred = try await service.registerPatient(patient: patient)
             
-            if let patientRegistred {
+            if patientRegistred != nil {
+                isPatientRegistred = true
                 print("Paciente cadastrado com sucesso!")
             } else {
+                isPatientRegistred = false
                 print("Erro ao cadastrar paciente!!")
             }
         } catch {
+            isPatientRegistred = false
             print("Ocorreu um erro ao cadastrar o paciente: \(error)")
         }
+        showAlert = true
     }
     
     private func createPatient() -> Patient {
