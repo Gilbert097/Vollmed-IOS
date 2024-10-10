@@ -31,27 +31,16 @@ struct SignInView: View {
                 .foregroundStyle(.gray)
                 .padding(.bottom)
             
-            Text("Email")
-                .font(.title3)
-                .bold()
-                .foregroundStyle(.accent)
+            LabelAndTextFieldView(text: $email,
+                                  label: "Email",
+                                  placeHolder: "Insira seu email",
+                                  type: .emailAddress,
+                                  autocapitalization: .never)
             
-            TextField("Insira seu email", text: $email)
-                .padding(14)
-                .background(.gray.opacity(0.25))
-                .clipShape(RoundedRectangle(cornerRadius: 14))
-                .keyboardType(.emailAddress)
-                .textInputAutocapitalization(.never)
-            
-            Text("Senha")
-                .font(.title3)
-                .bold()
-                .foregroundStyle(.accent)
-            
-            SecureField("Insira sua senha", text: $password)
-                .padding(14)
-                .background(.gray.opacity(0.25))
-                .clipShape(RoundedRectangle(cornerRadius: 14))
+            LabelAndTextFieldView(text: $password,
+                                  label: "Senha",
+                                  placeHolder: "Insira sua senha",
+                                  isSecureField: true)
             
             Button {
                 
