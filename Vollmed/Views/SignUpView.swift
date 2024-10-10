@@ -57,37 +57,20 @@ struct SignUpView: View {
                                       type: .emailAddress,
                                       autocapitalization: .never)
                 
-                Text("CPF")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
+                LabelAndTextFieldView(text: $cpf,
+                                      label: "CPF",
+                                      placeHolder: "Insira seu CPF",
+                                      type: .numberPad)
                 
-                TextField("Insira seu CPF", text: $cpf)
-                    .padding(14)
-                    .background(.gray.opacity(0.25))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
-                    .keyboardType(.numberPad)
+                LabelAndTextFieldView(text: $telephone,
+                                      label: "Telefone",
+                                      placeHolder: "Insira seu telefone",
+                                      type: .numberPad)
                 
-                Text("Telefone")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
-                
-                TextField("Insira seu telefone", text: $telephone)
-                    .padding(14)
-                    .background(.gray.opacity(0.25))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
-                    .keyboardType(.numberPad)
-                
-                Text("Senha")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
-                
-                SecureField("Insira sua senha", text: $password)
-                    .padding(14)
-                    .background(.gray.opacity(0.25))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
+                LabelAndTextFieldView(text: $password,
+                                      label: "Senha",
+                                      placeHolder: "Insira sua senha",
+                                      isSecureField: true)
                 
                 Text("Selecione o seu plano de saúde")
                     .font(.title3)
