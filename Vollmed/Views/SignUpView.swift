@@ -47,27 +47,15 @@ struct SignUpView: View {
                     .foregroundStyle(.gray)
                     .padding(.bottom)
                 
-                Text("Nome")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
+                LabelAndTextFieldView(text: $name, 
+                                      label: "Nome",
+                                      placeHolder: "Insira seu nome")
                 
-                TextField("Insira seu nome", text: $name)
-                    .padding(14)
-                    .background(.gray.opacity(0.25))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
-                
-                Text("Email")
-                    .font(.title3)
-                    .bold()
-                    .foregroundStyle(.accent)
-                
-                TextField("Insira seu email", text: $email)
-                    .padding(14)
-                    .background(.gray.opacity(0.25))
-                    .clipShape(RoundedRectangle(cornerRadius: 14))
-                    .keyboardType(.emailAddress)
-                    .textInputAutocapitalization(.never)
+                LabelAndTextFieldView(text: $email, 
+                                      label: "Email",
+                                      placeHolder: "Insira seu email",
+                                      type: .emailAddress,
+                                      autocapitalization: .never)
                 
                 Text("CPF")
                     .font(.title3)
