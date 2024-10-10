@@ -17,6 +17,8 @@ struct SignUpView: View {
     @State private var password: String = .init()
     @State private var healthPlanSelected: String
     
+    private let service = WebService()
+    
     private let healthPlansMock = [
         "Amil", "Unimed", "Bradesco Saúde", "SulAmérica", "Hapvida", "Notredame Intermédica", "São Francisco Saúde", "Golden Cross",
         "Medial Saúde", "América Saúde", "Outro"
@@ -47,11 +49,11 @@ struct SignUpView: View {
                     .foregroundStyle(.gray)
                     .padding(.bottom)
                 
-                LabelAndTextFieldView(text: $name, 
+                LabelAndTextFieldView(text: $name,
                                       label: "Nome",
                                       placeHolder: "Insira seu nome")
                 
-                LabelAndTextFieldView(text: $email, 
+                LabelAndTextFieldView(text: $email,
                                       label: "Email",
                                       placeHolder: "Insira seu email",
                                       type: .emailAddress,
@@ -84,7 +86,9 @@ struct SignUpView: View {
                 }
                 
                 Button {
-                    
+                    Task {
+                        await registerPatient()
+                    }
                 } label: {
                     ButtonView(text: "Cadastrar")
                 }
@@ -102,6 +106,33 @@ struct SignUpView: View {
         .scrollIndicators(.never)
         .navigationBarBackButtonHidden()
         .padding()
+    }
+    
+    private func registerPatient() async {
+        do {
+            let patient = createPatient()
+            let patientRegistred = try await service.registerPatient(patient: patient)
+            
+            if let patientRegistred {
+                print("Paciente cadastrado com sucesso!")
+            } else {
+                print("Erro ao cadastrar paciente!!")
+            }
+        } catch {
+            print("Ocorreu um erro ao cadastrar o paciente: \(error)")
+        }
+    }
+    
+    private func createPatient() -> Patient {
+        Patient(
+            id: nil,
+            cpf: cpf,
+            name: name,
+            email: email,
+            password: password,
+            phoneNumber: telephone,
+            healthPlan: healthPlanSelected
+        )
     }
 }
 
