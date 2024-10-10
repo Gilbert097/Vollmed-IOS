@@ -110,10 +110,12 @@ struct SignUpView: View {
         .padding()
         .alert(isPatientRegistred ? "Sucesso!" : "Ops, algo deu errado!",
                isPresented: $showAlert,
-               presenting: isPatientRegistred) { _ in
+               presenting: isPatientRegistred) { isRegistred in
             
             Button(action: {
-               print("Botão OK precionado!")
+                if isRegistred {
+                    presentationMode.wrappedValue.dismiss()
+                }
             }, label: {
                 Text("Ok")
             })
