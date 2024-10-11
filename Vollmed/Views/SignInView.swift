@@ -11,6 +11,9 @@ struct SignInView: View {
     
     @State private var email: String = .init()
     @State private var password: String = .init()
+    @State private var showAlert: Bool = false
+    
+    private let service = WebService()
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -43,7 +46,9 @@ struct SignInView: View {
                                   isSecureField: true)
             
             Button {
-                
+                Task {
+                    await login()
+                }
             } label: {
                 ButtonView(text: "Entrar")
             }
@@ -59,6 +64,31 @@ struct SignInView: View {
 
         }
         .padding()
+        .alert("Ops, algo deu errado!", isPresented: $showAlert) {
+            Button {
+                
+            } label: {
+                Text("Ok")
+            }
+
+        } message: {
+            Text("Houve um erro ao entrar na sua conta. Por favor tente novamente.")
+        }
+
+    }
+    
+    private func login() async {
+        do {
+            let request = LoginRequest(email: email, password: password)
+            if let response = try await service.login(request: request) {
+                print(response)
+            } else {
+                showAlert = true
+            }
+        } catch {
+            showAlert = true
+            print("Ocorreu um erro ao tentar fazer login: \(error)")
+        }
     }
 }
 

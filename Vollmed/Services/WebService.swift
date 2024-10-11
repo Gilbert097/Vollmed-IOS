@@ -14,6 +14,27 @@ struct WebService {
     private let baseURL = "http://localhost:3000"
     private let imageCache = NSCache<NSString, UIImage>()
     
+    func login(request: LoginRequest) async throws -> LoginResponse? {
+        let endpoint = baseURL + "/auth/login"
+        
+        guard let url = URL(string: endpoint) else {
+            print("Erro na requisição.")
+            return nil
+        }
+        
+        let jsonData = try JSONEncoder().encode(request)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = jsonData
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        let loginResponse = try JSONDecoder().decode(LoginResponse.self, from: data)
+        
+        return loginResponse
+    }
+    
     func registerPatient(patient: Patient) async throws -> Patient? {
         let endpoint = baseURL + "/paciente"
         
