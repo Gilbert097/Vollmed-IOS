@@ -81,7 +81,8 @@ struct SignInView: View {
         do {
             let request = LoginRequest(email: email, password: password)
             if let response = try await service.login(request: request) {
-                print(response)
+                UserDefaultsHelper.save(key: "token", value: response.token)
+                UserDefaultsHelper.save(key: "patient-id", value: response.id)
             } else {
                 showAlert = true
             }
