@@ -39,7 +39,7 @@ struct MyAppointmentsView: View {
     
     private func loadAllAppointments() async {
         do {
-            if let appointments = try await service.getAllAppointments(from: patientID) {
+            if let appointments = try await service.getAllAppointments() {
                 self.appointments = appointments
             }
         } catch {

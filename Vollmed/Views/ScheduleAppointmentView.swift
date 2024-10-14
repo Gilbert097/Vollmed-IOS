@@ -46,6 +46,11 @@ struct ScheduleAppointmentView: View {
     private func scheduleAppointment() async {
         
         do {
+            guard let patientID = UserDefaultsHelper.get(for: "patient-id") else {
+                print("ID do paciente não informado!")
+                return
+            }
+            
             let request = ScheduleAppointmentRequest(specialist: specialistID,
                                                      patient: patientID,
                                                      date: selectedDate.convertToString())
