@@ -47,6 +47,35 @@ struct HomeView: View {
                 await loadSpecialists()
             }
         }
+        .toolbar{
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    Task {
+                        await logout()
+                    }
+                } label: {
+                    HStack(spacing: 2) {
+                        Image(systemName: "rectangle.portrait.and.arrow.right")
+                        Text("Logout")
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    private func logout() async {
+        do {
+            let isSuccess = try await service.logout()
+            
+            if isSuccess {
+                UserDefaultsHelper.remove(for: "token")
+                UserDefaultsHelper.remove(for: "patient-id")
+            }
+            
+        } catch {
+            print("Ocorreu um erro ao tentar realizar logout: \(error)")
+        }
     }
     
     private func loadSpecialists() async  {
