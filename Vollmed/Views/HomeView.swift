@@ -11,6 +11,7 @@ struct HomeView: View {
     
     @State private var specialists: [Specialist] = []
     private let service = WebService()
+    private let authManager = AuthenticationManager.shared
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -69,8 +70,8 @@ struct HomeView: View {
             let isSuccess = try await service.logout()
             
             if isSuccess {
-                KeychainHelper.remove(for: "app-vollmed-token")
-                KeychainHelper.remove(for: "app-vollmed-patient-id")
+                authManager.removeToken()
+                authManager.removePaitentID()
             }
             
         } catch {

@@ -11,6 +11,7 @@ struct WebService {
     
     private let baseURL = "http://localhost:3000"
     private let imageCache = NSCache<NSString, UIImage>()
+    private let authManager = AuthenticationManager.shared
     
     func logout() async throws -> Bool {
         let endpoint = baseURL + "/auth/logout"
@@ -20,7 +21,7 @@ struct WebService {
             return false
         }
         
-        guard let token = KeychainHelper.get(for: "app-vollmed-token") else {
+        guard let token = authManager.token else {
             print("Token não informado!")
             return false
         }
@@ -89,7 +90,7 @@ struct WebService {
             return false
         }
         
-        guard let token = KeychainHelper.get(for: "app-vollmed-token")  else {
+        guard let token = authManager.token else {
             print("Token não informado!")
             return false
         }
@@ -120,7 +121,7 @@ struct WebService {
             return nil
         }
         
-        guard let token = KeychainHelper.get(for: "app-vollmed-token")  else {
+        guard let token = authManager.token else {
             print("Token não informado!")
             return nil
         }
@@ -142,7 +143,7 @@ struct WebService {
     
     func getAllAppointments() async throws -> [Appointment]? {
         
-        guard let patientID = KeychainHelper.get(for: "app-vollmed-patient-id") else {
+        guard let patientID = authManager.patientID else {
             print("ID do paciente não informado!")
             return nil
         }
@@ -154,7 +155,7 @@ struct WebService {
             return nil
         }
         
-        guard let token = KeychainHelper.get(for: "app-vollmed-token")  else {
+        guard let token = authManager.token else {
             print("Token não informado!")
             return nil
         }
@@ -177,7 +178,7 @@ struct WebService {
             return nil
         }
         
-        guard let token = KeychainHelper.get(for: "app-vollmed-token")  else {
+        guard let token = authManager.token else {
             print("Token não informado!")
             return nil
         }

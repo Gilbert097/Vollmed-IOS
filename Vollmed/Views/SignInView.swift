@@ -12,7 +12,8 @@ struct SignInView: View {
     @State private var email: String = .init()
     @State private var password: String = .init()
     @State private var showAlert: Bool = false
-    @ObservedObject var authManager = AuthenticationManager()
+    
+    private var authManager = AuthenticationManager.shared
     
     private let service = WebService()
     

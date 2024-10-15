@@ -9,34 +9,48 @@ import Foundation
 
 class AuthenticationManager: ObservableObject {
     
+    static let shared = AuthenticationManager()
+    
     @Published var token: String?
     @Published var patientID: String?
     
     private let tokenKey = "app-vollmed-token"
     private let patientIDKey = "app-vollmed-patient-id"
     
-    init() {
+    private init() {
         self.token = KeychainHelper.get(for: self.tokenKey)
         self.patientID = KeychainHelper.get(for: self.patientIDKey)
     }
     
     func saveToken(token: String) {
-        KeychainHelper.save(value: token, key: self.tokenKey)
-        self.token = token
+        runOnMainThread {
+            KeychainHelper.save(value: token, key: self.tokenKey)
+            self.token = token
+        }
     }
     
     func removeToken() {
-        KeychainHelper.remove(for: self.tokenKey)
-        self.token = nil
+        runOnMainThread {
+            KeychainHelper.remove(for: self.tokenKey)
+            self.token = nil
+        }
     }
     
     func savePatientID(id: String) {
-        KeychainHelper.save(value: id, key: self.patientIDKey)
-        self.patientID = id
+        runOnMainThread {
+            KeychainHelper.save(value: id, key: self.patientIDKey)
+            self.patientID = id
+        }
     }
     
     func removePaitentID() {
-        KeychainHelper.remove(for: self.patientIDKey)
-        self.patientID = nil
+        runOnMainThread {
+            KeychainHelper.remove(for: self.patientIDKey)
+            self.patientID = nil
+        }
+    }
+    
+    private func runOnMainThread(_ completion: @escaping () -> Void) {
+        DispatchQueue.main.async(execute: completion)
     }
 }

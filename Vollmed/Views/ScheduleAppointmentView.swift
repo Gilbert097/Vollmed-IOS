@@ -19,6 +19,7 @@ struct ScheduleAppointmentView: View {
     
     private let specialistID: String
     private let service = WebService()
+    private let authManager = AuthenticationManager.shared
     
     init(specialistID: String, isRescheduleView: Bool = false, appointmentID: String? = nil) {
         self.isRescheduleView = isRescheduleView
@@ -46,7 +47,7 @@ struct ScheduleAppointmentView: View {
     private func scheduleAppointment() async {
         
         do {
-            guard let patientID = KeychainHelper.get(for: "app-vollmed-patient-id") else {
+            guard let patientID = authManager.patientID else {
                 print("ID do paciente não informado!")
                 return
             }
