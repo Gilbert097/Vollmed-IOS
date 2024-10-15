@@ -20,7 +20,7 @@ struct WebService {
             return false
         }
         
-        guard let token = UserDefaultsHelper.get(for: "token") else {
+        guard let token = KeychainHelper.get(for: "app-vollmed-token") else {
             print("Token não informado!")
             return false
         }
@@ -89,7 +89,7 @@ struct WebService {
             return false
         }
         
-        guard let token = UserDefaultsHelper.get(for: "token") else {
+        guard let token = KeychainHelper.get(for: "app-vollmed-token")  else {
             print("Token não informado!")
             return false
         }
@@ -120,7 +120,7 @@ struct WebService {
             return nil
         }
         
-        guard let token = UserDefaultsHelper.get(for: "token") else {
+        guard let token = KeychainHelper.get(for: "app-vollmed-token")  else {
             print("Token não informado!")
             return nil
         }
@@ -142,7 +142,7 @@ struct WebService {
     
     func getAllAppointments() async throws -> [Appointment]? {
         
-        guard let patientID = UserDefaultsHelper.get(for: "patient-id") else {
+        guard let patientID = KeychainHelper.get(for: "app-vollmed-patient-id") else {
             print("ID do paciente não informado!")
             return nil
         }
@@ -154,7 +154,7 @@ struct WebService {
             return nil
         }
         
-        guard let token = UserDefaultsHelper.get(for: "token") else {
+        guard let token = KeychainHelper.get(for: "app-vollmed-token")  else {
             print("Token não informado!")
             return nil
         }
@@ -177,7 +177,7 @@ struct WebService {
             return nil
         }
         
-        guard let token = UserDefaultsHelper.get(for: "token") else {
+        guard let token = KeychainHelper.get(for: "app-vollmed-token")  else {
             print("Token não informado!")
             return nil
         }

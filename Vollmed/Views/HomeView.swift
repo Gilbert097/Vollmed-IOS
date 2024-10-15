@@ -69,8 +69,8 @@ struct HomeView: View {
             let isSuccess = try await service.logout()
             
             if isSuccess {
-                UserDefaultsHelper.remove(for: "token")
-                UserDefaultsHelper.remove(for: "patient-id")
+                KeychainHelper.remove(for: "app-vollmed-token")
+                KeychainHelper.remove(for: "app-vollmed-patient-id")
             }
             
         } catch {
