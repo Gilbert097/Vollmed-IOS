@@ -17,6 +17,7 @@
 		48539DF12AB0F47D005BD7C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48539DF02AB0F47D005BD7C9 /* Assets.xcassets */; };
 		48539DF42AB0F47D005BD7C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48539DF32AB0F47D005BD7C9 /* Preview Assets.xcassets */; };
 		D446061B2CBEAAC700D87081 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446061A2CBEAAC700D87081 /* KeychainHelper.swift */; };
+		D446061E2CBEE01900D87081 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446061D2CBEE01900D87081 /* AuthenticationManager.swift */; };
 		D48904652CB86756008EDE6F /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48904642CB86756008EDE6F /* Patient.swift */; };
 		D48904672CB96022008EDE6F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48904662CB96022008EDE6F /* Login.swift */; };
 		D489046A2CB99242008EDE6F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48904692CB99242008EDE6F /* UserDefaultsHelper.swift */; };
@@ -45,6 +46,7 @@
 		48539DF02AB0F47D005BD7C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48539DF32AB0F47D005BD7C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D446061A2CBEAAC700D87081 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		D446061D2CBEE01900D87081 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		D48904642CB86756008EDE6F /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		D48904662CB96022008EDE6F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		D48904692CB99242008EDE6F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		48539DEB2AB0F47C005BD7C9 /* Vollmed */ = {
 			isa = PBXGroup;
 			children = (
+				D446061C2CBEE00B00D87081 /* Managers */,
 				D48904682CB99231008EDE6F /* Helpers */,
 				D495F9642CB477420034B229 /* Extensions */,
 				484BEEFB2AB0F56C0033C07A /* Services */,
@@ -155,6 +158,14 @@
 				48539DF32AB0F47D005BD7C9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D446061C2CBEE00B00D87081 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D446061D2CBEE01900D87081 /* AuthenticationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		D48904682CB99231008EDE6F /* Helpers */ = {
@@ -266,6 +277,7 @@
 				D495F9702CB5AFB30034B229 /* MyAppointmentCardView.swift in Sources */,
 				D495F9632CB46A960034B229 /* ScheduleAppointmentView.swift in Sources */,
 				D495F9742CB6E7220034B229 /* SignInView.swift in Sources */,
+				D446061E2CBEE01900D87081 /* AuthenticationManager.swift in Sources */,
 				D495F9782CB83B400034B229 /* LabelAndTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
