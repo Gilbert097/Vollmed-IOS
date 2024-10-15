@@ -7,10 +7,11 @@
 
 import Foundation
 
-class AuthenticationManager {
+class AuthenticationManager: ObservableObject {
     
-    var token: String?
-    var patientID: String?
+    @Published var token: String?
+    @Published var patientID: String?
+    
     private let tokenKey = "app-vollmed-token"
     private let patientIDKey = "app-vollmed-patient-id"
     

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @AppStorage("token") var token: String = .init()
+    @ObservedObject var authManager = AuthenticationManager()
     
     var body: some View {
-        if token.isEmpty {
+        if authManager.token == nil {
             NavigationStack {
                 SignInView()
             }

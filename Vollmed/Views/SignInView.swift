@@ -12,6 +12,7 @@ struct SignInView: View {
     @State private var email: String = .init()
     @State private var password: String = .init()
     @State private var showAlert: Bool = false
+    @ObservedObject var authManager = AuthenticationManager()
     
     private let service = WebService()
     
@@ -81,8 +82,8 @@ struct SignInView: View {
         do {
             let request = LoginRequest(email: email, password: password)
             if let response = try await service.login(request: request) {
-                KeychainHelper.save(value: response.token, key: "app-vollmed-token")
-                KeychainHelper.save(value: response.id, key: "app-vollmed-patient-id")
+                authManager.saveToken(token: response.token)
+                authManager.savePatientID(id: response.id)
             } else {
                 showAlert = true
             }
