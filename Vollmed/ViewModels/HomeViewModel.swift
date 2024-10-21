@@ -9,7 +9,8 @@ import Foundation
 
 struct HomeViewModel {
     
-    let service = WebService()
+    private let service = WebService()
+    private let authManager = AuthenticationManager.shared
     
     func getAllSpecialists() async throws -> [Specialist]? {
         
@@ -23,5 +24,19 @@ struct HomeViewModel {
         }
         
         return nil
+    }
+    
+    func logout() async {
+        do {
+            let isSuccess = try await service.logout()
+            
+            if isSuccess {
+                authManager.removeToken()
+                authManager.removePaitentID()
+            }
+            
+        } catch {
+            print("Ocorreu um erro ao tentar realizar logout: \(error)")
+        }
     }
 }
