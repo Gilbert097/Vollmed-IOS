@@ -32,6 +32,7 @@
 		D495F9742CB6E7220034B229 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9732CB6E7220034B229 /* SignInView.swift */; };
 		D495F9762CB6EBAA0034B229 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9752CB6EBAA0034B229 /* SignUpView.swift */; };
 		D495F9782CB83B400034B229 /* LabelAndTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495F9772CB83B400034B229 /* LabelAndTextFieldView.swift */; };
+		D4A266872CC6C2E70075E9B9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266862CC6C2E70075E9B9 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		D495F9732CB6E7220034B229 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		D495F9752CB6EBAA0034B229 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D495F9772CB83B400034B229 /* LabelAndTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAndTextFieldView.swift; sourceTree = "<group>"; };
+		D4A266862CC6C2E70075E9B9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				D495F9642CB477420034B229 /* Extensions */,
 				484BEEFB2AB0F56C0033C07A /* Services */,
 				484BEEFA2AB0F5680033C07A /* Models */,
+				D4A266852CC6C2D40075E9B9 /* ViewModels */,
 				484BEEF82AB0F55F0033C07A /* Views */,
 				48539DEC2AB0F47C005BD7C9 /* VollmedApp.swift */,
 				48539DEE2AB0F47C005BD7C9 /* ContentView.swift */,
@@ -184,6 +187,14 @@
 				D495F9672CB47A150034B229 /* String+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D4A266852CC6C2D40075E9B9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D4A266862CC6C2E70075E9B9 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 				D495F96C2CB56DF20034B229 /* MyAppointmentsView.swift in Sources */,
 				D48904652CB86756008EDE6F /* Patient.swift in Sources */,
 				D495F9702CB5AFB30034B229 /* MyAppointmentCardView.swift in Sources */,
+				D4A266872CC6C2E70075E9B9 /* HomeViewModel.swift in Sources */,
 				D495F9632CB46A960034B229 /* ScheduleAppointmentView.swift in Sources */,
 				D495F9742CB6E7220034B229 /* SignInView.swift in Sources */,
 				D446061E2CBEE01900D87081 /* AuthenticationManager.swift in Sources */,

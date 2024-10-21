@@ -12,6 +12,7 @@ struct HomeView: View {
     @State private var specialists: [Specialist] = []
     private let service = WebService()
     private let authManager = AuthenticationManager.shared
+    private var viewModel = HomeViewModel()
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -81,7 +82,7 @@ struct HomeView: View {
     
     private func loadSpecialists() async  {
         do {
-            if let specialists = try await service.getAllSpecialists() {
+            if let specialists = try await viewModel.getAllSpecialists() {
                 self.specialists = specialists
             }
         } catch {
