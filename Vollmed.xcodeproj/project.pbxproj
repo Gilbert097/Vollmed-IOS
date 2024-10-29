@@ -36,6 +36,7 @@
 		D4A2668D2CD179FE0075E9B9 /* Enpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2668C2CD179FE0075E9B9 /* Enpoint.swift */; };
 		D4A2668F2CD17B880075E9B9 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2668E2CD17B880075E9B9 /* RequestMethod.swift */; };
 		D4A266912CD17CCA0075E9B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266902CD17CCA0075E9B9 /* RequestError.swift */; };
+		D4A266932CD17E4C0075E9B9 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266922CD17E4C0075E9B9 /* HttpClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		D4A2668C2CD179FE0075E9B9 /* Enpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enpoint.swift; sourceTree = "<group>"; };
 		D4A2668E2CD17B880075E9B9 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		D4A266902CD17CCA0075E9B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		D4A266922CD17E4C0075E9B9 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +222,7 @@
 				D4A2668C2CD179FE0075E9B9 /* Enpoint.swift */,
 				D4A2668E2CD17B880075E9B9 /* RequestMethod.swift */,
 				D4A266902CD17CCA0075E9B9 /* RequestError.swift */,
+				D4A266922CD17E4C0075E9B9 /* HttpClient.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				484BEEFF2AB0F59D0033C07A /* WebService.swift in Sources */,
 				D48904672CB96022008EDE6F /* Login.swift in Sources */,
 				48539DED2AB0F47C005BD7C9 /* VollmedApp.swift in Sources */,
+				D4A266932CD17E4C0075E9B9 /* HttpClient.swift in Sources */,
 				D495F9762CB6EBAA0034B229 /* SignUpView.swift in Sources */,
 				D495F96C2CB56DF20034B229 /* MyAppointmentsView.swift in Sources */,
 				D48904652CB86756008EDE6F /* Patient.swift in Sources */,
