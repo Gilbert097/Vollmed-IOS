@@ -37,6 +37,7 @@
 		D4A2668F2CD17B880075E9B9 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A2668E2CD17B880075E9B9 /* RequestMethod.swift */; };
 		D4A266912CD17CCA0075E9B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266902CD17CCA0075E9B9 /* RequestError.swift */; };
 		D4A266932CD17E4C0075E9B9 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266922CD17E4C0075E9B9 /* HttpClient.swift */; };
+		D4A266952CD18CF10075E9B9 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266942CD18CF10075E9B9 /* HomeEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		D4A2668E2CD17B880075E9B9 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		D4A266902CD17CCA0075E9B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		D4A266922CD17E4C0075E9B9 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		D4A266942CD18CF10075E9B9 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		D4A2668A2CD1799C0075E9B9 /* Enpoints */ = {
 			isa = PBXGroup;
 			children = (
+				D4A266942CD18CF10075E9B9 /* HomeEndpoint.swift */,
 			);
 			path = Enpoints;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				D48904652CB86756008EDE6F /* Patient.swift in Sources */,
 				D495F9702CB5AFB30034B229 /* MyAppointmentCardView.swift in Sources */,
 				D4A266872CC6C2E70075E9B9 /* HomeViewModel.swift in Sources */,
+				D4A266952CD18CF10075E9B9 /* HomeEndpoint.swift in Sources */,
 				D495F9632CB46A960034B229 /* ScheduleAppointmentView.swift in Sources */,
 				D495F9742CB6E7220034B229 /* SignInView.swift in Sources */,
 				D446061E2CBEE01900D87081 /* AuthenticationManager.swift in Sources */,
