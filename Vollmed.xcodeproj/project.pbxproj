@@ -38,6 +38,7 @@
 		D4A266912CD17CCA0075E9B9 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266902CD17CCA0075E9B9 /* RequestError.swift */; };
 		D4A266932CD17E4C0075E9B9 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266922CD17E4C0075E9B9 /* HttpClient.swift */; };
 		D4A266952CD18CF10075E9B9 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266942CD18CF10075E9B9 /* HomeEndpoint.swift */; };
+		D4A266972CD193B30075E9B9 /* ScheduleAppointmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A266962CD193B30075E9B9 /* ScheduleAppointmentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		D4A266902CD17CCA0075E9B9 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		D4A266922CD17E4C0075E9B9 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		D4A266942CD18CF10075E9B9 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
+		D4A266962CD193B30075E9B9 /* ScheduleAppointmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				D4A266862CC6C2E70075E9B9 /* HomeViewModel.swift */,
+				D4A266962CD193B30075E9B9 /* ScheduleAppointmentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				D4A266952CD18CF10075E9B9 /* HomeEndpoint.swift in Sources */,
 				D495F9632CB46A960034B229 /* ScheduleAppointmentView.swift in Sources */,
 				D495F9742CB6E7220034B229 /* SignInView.swift in Sources */,
+				D4A266972CD193B30075E9B9 /* ScheduleAppointmentViewModel.swift in Sources */,
 				D446061E2CBEE01900D87081 /* AuthenticationManager.swift in Sources */,
 				D495F9782CB83B400034B229 /* LabelAndTextFieldView.swift in Sources */,
 			);

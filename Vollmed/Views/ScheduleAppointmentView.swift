@@ -16,10 +16,9 @@ struct ScheduleAppointmentView: View {
     
     private let isRescheduleView: Bool
     private let appointmentID: String?
-    
     private let specialistID: String
-    private let service = WebService()
-    private let authManager = AuthenticationManager.shared
+    
+    private let viewModel = ScheduleAppointmentViewModel()
     
     init(specialistID: String, isRescheduleView: Bool = false, appointmentID: String? = nil) {
         self.isRescheduleView = isRescheduleView
@@ -28,43 +27,21 @@ struct ScheduleAppointmentView: View {
     }
     
     private func rescheduleAppointment() async {
-        do {
-            guard let appointmentID else { return }
-            
-            if let _ = try await service.resheduleAppointment(appointmentID: appointmentID, date: selectedDate.convertToString()) {
-                print("Consulta reagendada com sucesso!")
-                isAppointmentScheduled = true
-            } else {
-                isAppointmentScheduled = false
-            }
-        } catch {
+        if await viewModel.rescheduleAppointment(appointmentID: appointmentID, selectedDate: selectedDate) {
+            print("Consulta reagendada com sucesso!")
+            isAppointmentScheduled = true
+        } else {
             isAppointmentScheduled = false
-            print("Ocorreu um erro ao realizar reagendamento: \(error)")
         }
         showAlert = true
     }
     
     private func scheduleAppointment() async {
-        
-        do {
-            guard let patientID = authManager.patientID else {
-                print("ID do paciente não informado!")
-                return
-            }
-            
-            let request = ScheduleAppointmentRequest(specialist: specialistID,
-                                                     patient: patientID,
-                                                     date: selectedDate.convertToString())
-            
-            if let _ = try await service.sheduleAppointment(appointmentResquest: request) {
-                print("Consulta agendada com sucesso!")
-                isAppointmentScheduled = true
-            } else {
-                isAppointmentScheduled = false
-            }
-        } catch {
+        if await viewModel.scheduleAppointment(specialistID: self.specialistID, selectedDate: self.selectedDate) {
+            print("Consulta agendada com sucesso!")
+            isAppointmentScheduled = true
+        } else {
             isAppointmentScheduled = false
-            print("Ocorreu um erro ao realizar agendamento: \(error)")
         }
         showAlert = true
     }
