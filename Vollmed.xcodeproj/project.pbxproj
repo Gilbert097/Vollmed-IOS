@@ -18,6 +18,7 @@
 		48539DF42AB0F47D005BD7C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48539DF32AB0F47D005BD7C9 /* Preview Assets.xcassets */; };
 		D446061B2CBEAAC700D87081 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446061A2CBEAAC700D87081 /* KeychainHelper.swift */; };
 		D446061E2CBEE01900D87081 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D446061D2CBEE01900D87081 /* AuthenticationManager.swift */; };
+		D482A19B2CD94DDD00FF09B0 /* HomeNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482A19A2CD94DDD00FF09B0 /* HomeNetworkingService.swift */; };
 		D48904652CB86756008EDE6F /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48904642CB86756008EDE6F /* Patient.swift */; };
 		D48904672CB96022008EDE6F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48904662CB96022008EDE6F /* Login.swift */; };
 		D489046A2CB99242008EDE6F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48904692CB99242008EDE6F /* UserDefaultsHelper.swift */; };
@@ -54,6 +55,7 @@
 		48539DF32AB0F47D005BD7C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D446061A2CBEAAC700D87081 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		D446061D2CBEE01900D87081 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		D482A19A2CD94DDD00FF09B0 /* HomeNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkingService.swift; sourceTree = "<group>"; };
 		D48904642CB86756008EDE6F /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		D48904662CB96022008EDE6F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		D48904692CB99242008EDE6F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 		D4A2668B2CD179A60075E9B9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				D482A19A2CD94DDD00FF09B0 /* HomeNetworkingService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				D4A266872CC6C2E70075E9B9 /* HomeViewModel.swift in Sources */,
 				D4A266952CD18CF10075E9B9 /* HomeEndpoint.swift in Sources */,
 				D495F9632CB46A960034B229 /* ScheduleAppointmentView.swift in Sources */,
+				D482A19B2CD94DDD00FF09B0 /* HomeNetworkingService.swift in Sources */,
 				D495F9742CB6E7220034B229 /* SignInView.swift in Sources */,
 				D4A266972CD193B30075E9B9 /* ScheduleAppointmentViewModel.swift in Sources */,
 				D446061E2CBEE01900D87081 /* AuthenticationManager.swift in Sources */,
