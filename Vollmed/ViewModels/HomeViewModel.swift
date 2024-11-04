@@ -9,26 +9,29 @@ import Foundation
 
 struct HomeViewModel {
     
-    private let service = WebService()
+    private let service: HomeServiceable
     private let authManager = AuthenticationManager.shared
     
+    public init(service: HomeServiceable) {
+        self.service = service
+    }
+    
     func getAllSpecialists() async throws -> [Specialist]? {
+        let specialists = try await service.getAllSpecialists()
         
-        do {
-            if let specialists = try await service.getAllSpecialists() {
-                return specialists
-            }
-        } catch {
-            print("Ocorreu um erro ao obter os especialistas. \(error)")
+        switch specialists {
+        case .success(let response):
+            return response
+        case .failure(let error):
             throw error
         }
-        
-        return nil
+      
     }
     
     func logout() async {
         do {
-            let isSuccess = try await service.logout()
+            let oldService = WebService()
+            let isSuccess = try await oldService.logout()
             
             if isSuccess {
                 authManager.removeToken()
