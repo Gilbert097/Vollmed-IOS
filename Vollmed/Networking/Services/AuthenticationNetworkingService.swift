@@ -11,7 +11,7 @@ protocol AuthenticationServiceable {
     func logout() async -> Result<Bool?, RequestError>
 }
 
-struct AuthenticationNetwoekingService: HttpClient, AuthenticationServiceable {
+struct AuthenticationNetworkingService: HttpClient, AuthenticationServiceable {
     func logout() async -> Result<Bool?, RequestError> {
         await sendRequest(endpoint: AuthenticationEndpoint.logout, responseModel: nil)
     }
