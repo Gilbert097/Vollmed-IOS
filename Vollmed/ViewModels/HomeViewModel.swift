@@ -9,17 +9,19 @@ import Foundation
 
 struct HomeViewModel {
     
-    private let service: HomeServiceable
+    private let homeService: HomeServiceable
+    private let authenticationService: AuthenticationServiceable
     private let authManager = AuthenticationManager.shared
     
-    public init(service: HomeServiceable) {
-        self.service = service
+    public init(homeService: HomeServiceable, authenticationService: AuthenticationServiceable) {
+        self.homeService = homeService
+        self.authenticationService = authenticationService
     }
     
     func getAllSpecialists() async throws -> [Specialist]? {
-        let specialists = try await service.getAllSpecialists()
+        let result = try await homeService.getAllSpecialists()
         
-        switch specialists {
+        switch result {
         case .success(let response):
             return response
         case .failure(let error):
@@ -29,17 +31,14 @@ struct HomeViewModel {
     }
     
     func logout() async {
-        do {
-            let oldService = WebService()
-            let isSuccess = try await oldService.logout()
-            
-            if isSuccess {
-                authManager.removeToken()
-                authManager.removePaitentID()
-            }
-            
-        } catch {
-            print("Ocorreu um erro ao tentar realizar logout: \(error)")
+        let result = await authenticationService.logout()
+        
+        switch result {
+        case .success(_):
+            authManager.removeToken()
+            authManager.removePaitentID()
+        case .failure(let error):
+            print(error.localizedDescription)
         }
     }
 }

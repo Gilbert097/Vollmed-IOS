@@ -7,11 +7,11 @@
 
 import Foundation
 
-enum AutenticationEndpoint {
+enum AuthenticationEndpoint {
     case logout
 }
 
-extension AutenticationEndpoint: Enpoint {
+extension AuthenticationEndpoint: Enpoint {
     var path: String {
         switch self {
         case .logout:
