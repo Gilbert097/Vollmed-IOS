@@ -19,7 +19,7 @@ struct SignUpView: View {
     @State private var showAlert = false
     @State private var isPatientRegistred = false
     
-    private let service = WebService()
+    private let viewModel = SignUpViewModel(service: SignUpNetworkingService())
     
     private let healthPlansMock = [
         "Amil", "Unimed", "Bradesco Saúde", "SulAmérica", "Hapvida", "Notredame Intermédica", "São Francisco Saúde", "Golden Cross",
@@ -129,21 +129,8 @@ struct SignUpView: View {
     }
     
     private func registerPatient() async {
-        do {
-            let patient = createPatient()
-            let patientRegistred = try await service.registerPatient(patient: patient)
-            
-            if patientRegistred != nil {
-                isPatientRegistred = true
-                print("Paciente cadastrado com sucesso!")
-            } else {
-                isPatientRegistred = false
-                print("Erro ao cadastrar paciente!!")
-            }
-        } catch {
-            isPatientRegistred = false
-            print("Ocorreu um erro ao cadastrar o paciente: \(error)")
-        }
+        let patient = createPatient()
+        self.isPatientRegistred = await viewModel.registerPatient(patient: patient)
         showAlert = true
     }
     
