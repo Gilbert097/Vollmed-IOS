@@ -13,9 +13,7 @@ struct SignInView: View {
     @State private var password: String = .init()
     @State private var showAlert: Bool = false
     
-    private var authManager = AuthenticationManager.shared
-    
-    private let service = WebService()
+    private let viewModel = SignInViewModel(authenticationService: AuthenticationNetworkingService())
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -81,11 +79,7 @@ struct SignInView: View {
     
     private func login() async {
         do {
-            let request = LoginRequest(email: email, password: password)
-            if let response = try await service.login(request: request) {
-                authManager.saveToken(token: response.token)
-                authManager.savePatientID(id: response.id)
-            } else {
+            if try await !viewModel.login(email: email, password: password) {
                 showAlert = true
             }
         } catch {

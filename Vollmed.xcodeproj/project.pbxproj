@@ -21,6 +21,7 @@
 		D482A19B2CD94DDD00FF09B0 /* HomeNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482A19A2CD94DDD00FF09B0 /* HomeNetworkingService.swift */; };
 		D482A19D2CD9539100FF09B0 /* AutenticationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482A19C2CD9539100FF09B0 /* AutenticationEndpoint.swift */; };
 		D482A19F2CD9572800FF09B0 /* AuthenticationNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482A19E2CD9572800FF09B0 /* AuthenticationNetworkingService.swift */; };
+		D482A1A12CE6785600FF09B0 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482A1A02CE6785600FF09B0 /* SignInViewModel.swift */; };
 		D48904652CB86756008EDE6F /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48904642CB86756008EDE6F /* Patient.swift */; };
 		D48904672CB96022008EDE6F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48904662CB96022008EDE6F /* Login.swift */; };
 		D489046A2CB99242008EDE6F /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48904692CB99242008EDE6F /* UserDefaultsHelper.swift */; };
@@ -60,6 +61,7 @@
 		D482A19A2CD94DDD00FF09B0 /* HomeNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkingService.swift; sourceTree = "<group>"; };
 		D482A19C2CD9539100FF09B0 /* AutenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutenticationEndpoint.swift; sourceTree = "<group>"; };
 		D482A19E2CD9572800FF09B0 /* AuthenticationNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationNetworkingService.swift; sourceTree = "<group>"; };
+		D482A1A02CE6785600FF09B0 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		D48904642CB86756008EDE6F /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		D48904662CB96022008EDE6F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		D48904692CB99242008EDE6F /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				D4A266862CC6C2E70075E9B9 /* HomeViewModel.swift */,
 				D4A266962CD193B30075E9B9 /* ScheduleAppointmentViewModel.swift */,
+				D482A1A02CE6785600FF09B0 /* SignInViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				D48904652CB86756008EDE6F /* Patient.swift in Sources */,
 				D495F9702CB5AFB30034B229 /* MyAppointmentCardView.swift in Sources */,
 				D4A266872CC6C2E70075E9B9 /* HomeViewModel.swift in Sources */,
+				D482A1A12CE6785600FF09B0 /* SignInViewModel.swift in Sources */,
 				D4A266952CD18CF10075E9B9 /* HomeEndpoint.swift in Sources */,
 				D495F9632CB46A960034B229 /* ScheduleAppointmentView.swift in Sources */,
 				D482A19B2CD94DDD00FF09B0 /* HomeNetworkingService.swift in Sources */,
