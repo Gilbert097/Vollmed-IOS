@@ -39,6 +39,4 @@ extension HomeEndpoint: Enpoint {
             return nil
         }
     }
-    
-    
 }

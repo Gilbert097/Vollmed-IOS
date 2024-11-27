@@ -10,7 +10,7 @@ import SwiftUI
 struct MyAppointmentsView: View {
     
     @State private var appointments: [Appointment] = []
-    private let service = WebService()
+    private let viewModel = MyAppointmentsViewModel(service: AppointmentNetworkingService())
     
     var body: some View {
         VStack {
@@ -33,17 +33,7 @@ struct MyAppointmentsView: View {
         .navigationBarTitleDisplayMode(.large)
         .padding()
         .task {
-            await loadAllAppointments()
-        }
-    }
-    
-    private func loadAllAppointments() async {
-        do {
-            if let appointments = try await service.getAllAppointments() {
-                self.appointments = appointments
-            }
-        } catch {
-            print("Ocorreu um erro ao recuperar lista de consultas: \(error)")
+            self.appointments = await viewModel.getAllAppointments()
         }
     }
 }
